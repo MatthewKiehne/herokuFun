@@ -12,11 +12,12 @@
     }
 
     console.log('<%= process.env.__dirname %>');
+    console.log(window.location.href);
 
-    // var oReq = new XMLHttpRequest();
-    // oReq.addEventListener("load", reqListener);
-    // oReq.open("GET", "http://www.example.org/example.txt");
-    // oReq.send();
+    var oReq = new XMLHttpRequest();
+    oReq.addEventListener("load", reqListener);
+    oReq.open("GET", window.location.href + "api");
+    oReq.send();
   </script>
   <%- include ("../partials/nav.ejs") %>
 </body>
